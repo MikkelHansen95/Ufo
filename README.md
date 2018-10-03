@@ -16,10 +16,13 @@
 
 * **Console output:**
 
+  *
 
 * **The CSV file should be downloaded to the 'csv' folder.**
 
 * **Plotting images should be created in .png format and found in the 'plots' folder as:** 
+
+  *
 
 * **OBS:** *When creating the plot it should be displayed in a new window and the program execution will halt until this window is closed.*
 
