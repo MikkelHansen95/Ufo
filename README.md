@@ -1,6 +1,6 @@
 # Python Assignment 4 - Group: Plain Product.
 ### Analyzing dataset from Plain Product : The Movie Dataset.
-* This program analyzes a movie dataset and answer some questions about the movies: [questions](https://github.com/MikkelHansen95/dataset/blob/master/README.md) 
+* This program analyzes a movie dataset and answer some questions about the movies: [Link to assignment](https://github.com/MikkelHansen95/dataset/blob/master/README.md) 
 * Questiones like how many movie are rated adult, which english action movie had the biggest revenue and so on.
 * This program also produces some 2D and 3D plots to illustrate some of the relationships between the movie data.
 
