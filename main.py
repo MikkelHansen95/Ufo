@@ -19,14 +19,15 @@ if __name__ == '__main__':
     try:
         _, url = sys.argv
         file_name = os.path.join(file_dir, os.path.basename(url))
-        download(url, file_name)   
+        print(f'\nDownloading file : {os.path.basename(url)} ...')
+        download(url, file_name)  
+        print('Download completed succesfully!')
     except Exception as e:
         print(__doc__)
         sys.exit(1)  
 
     # After downloading the csv file we use our own converter to read the file and clean it up. 
     # We filter some data away in order to represent our data in away we find more easy to work with
-    # data_set = convert(file_name)
-
+    data_set = convert(file_name)
 
     
