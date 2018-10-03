@@ -7,7 +7,7 @@
 * Clone the project into your computer.
 * How to use the program:
   * In a command prompt or bash with Python available, use the following command together with the URL to the CSV file: 
-  * python main.py 
+  * python main.py https://raw.githubusercontent.com/MikkelHansen95/dataset/master/movies_metadata.csv
 
 ### Dependencies:
 * Python - Anaconda Distribution 
