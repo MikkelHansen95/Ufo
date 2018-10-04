@@ -18,18 +18,18 @@
 
 * **Console output:**
 
-There are 0 adult movies in the set
+  * There are 0 adult movies in the set
 
-In the set 1928 movies are listed as "Animaton" under genres.
+  * In the set 1928 movies are listed as "Animaton" under genres.
 
-The movie with the biggest budget is "Pirates of the Caribbean: On Stranger Tides".
-And it is listed in the set with a 380000000$ budget.
+  * The movie with the biggest budget is "Pirates of the Caribbean: On Stranger Tides".
+  * And it is listed in the set with a 380000000$ budget.
 
- "The Lego Batman Movie" is the most popular movie from Denmark.
-The movie is rated 17.070748 in popularity.
+  * "The Lego Batman Movie" is the most popular movie from Denmark.
+  * The movie is rated 17.070748 in popularity.
 
- "Avatar" is the movie from United Kingdom with the biggest revenue.
-It is listed in the set with a 2787965087$ revenue.
+  * "Avatar" is the movie from United Kingdom with the biggest revenue.
+  * It is listed in the set with a 2787965087$ revenue.
 
 * **The CSV file should be downloaded to the 'csv' folder.**
 
