@@ -18,7 +18,7 @@ def count_animation_movies(data_set):
         for dict in data[2]:
             if dict['name'] == 'Animation':
                 count += 1
-    return f'\nIn the set {count} movies are listed under genres as "Animaton".'
+    return f'\nIn the set {count} movies are listed as "Animaton" under genres.'
 
 def find_biggest_budget(data_set):
     max = 0
