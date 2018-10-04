@@ -8,7 +8,7 @@ import lib.plotting as plotting
 def count_adult_movies(data_set):
     count = 0
     for data in data_set:
-        if data[0] == 'true':
+        if data[0] == 'True':
             count += 1
     return f'\nThere are {count} adult movies in the set'
 
