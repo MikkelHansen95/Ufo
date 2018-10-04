@@ -37,3 +37,6 @@ if __name__ == '__main__':
     print(stat.most_popular(data_set,'Denmark'))
     print(stat.find_biggest_revenue(data_set,'United Kingdom'))
     
+    # print(stat.most_popular(data_set,'Greenland'))
+    # print(stat.find_biggest_revenue(data_set,'Burundi'))
+    
