@@ -18,7 +18,7 @@
 
 * **Console output:**
 
-There are 0 adult movies in the set  
+There are 8 adult movies in the set  
 
 In the set 1928 movies are listed as "Animaton" under genres.  
 
