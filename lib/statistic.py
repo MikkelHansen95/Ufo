@@ -40,7 +40,7 @@ def find_biggest_revenue(data_set, language):
     if max == 0:
         return f'\nNo movies found in the set from the country: {language}.'
     else:    
-        return f'\n "{title}" is the movie from {language} with the biggest revenue.\nIt is listed in the set with a {max}$ revenue.'
+        return f'\n"{title}" is the movie from {language} with the biggest revenue.\nIt is listed in the set with a {max}$ revenue.'
 
 def most_popular(data_set, language):
     max = 0
@@ -53,4 +53,4 @@ def most_popular(data_set, language):
     if max == 0:
         return f'\nNo movies found in the set from the country: {language}.'
     else:  
-        return f'\n "{title}" is the most popular movie from {language}.\nThe movie is rated {max} in popularity.'
+        return f'\n"{title}" is the most popular movie from {language}.\nThe movie is rated {max} in popularity.'

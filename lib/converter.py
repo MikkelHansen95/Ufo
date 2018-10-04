@@ -9,7 +9,7 @@ def convert(file_name):
     '''
         This function cleans the data in the given CSV file
     '''
-    print('Reading data from file to memory ...')
+    print('\nReading data from file to memory ...')
     with open(file_name, encoding='utf-8') as fp:
         reader = csv.reader(fp)
         next(reader)
@@ -27,5 +27,5 @@ def convert(file_name):
             except:
                 # Some data in the data set is not in standard format..!
                 pass
-    print('Finished reading and cleaning data ...')
+    print('Finished reading and cleaning data!')
     return data_set

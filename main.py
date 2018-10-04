@@ -12,6 +12,7 @@ from lib.download import download
 import lib.statistic as stat
 
 if __name__ == '__main__':
+    print("\nPlain Product Movie Analyzer:")
     file_dir = 'csv'
     # If the csv directory already exits it will be created
     if not os.path.isdir(file_dir):
