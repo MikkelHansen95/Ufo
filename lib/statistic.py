@@ -3,7 +3,12 @@
 '''
 
 from collections import Counter
+import matplotlib.pyplot as plt
 import lib.plotting as plotting
+import datetime
+import pandas as pd
+import numpy as np
+
 
 def count_adult_movies(data_set):
     count = 0
@@ -54,3 +59,34 @@ def most_popular(data_set, language):
         return f'\nNo movies found in the set from the country: {language}.'
     else:  
         return f'\n"{title}" is the most popular movie from {language}.\nThe movie is rated {max} in popularity.'
+
+#   1995-12-22
+
+def get_all_dates_in_year():
+
+    date1 = datetime.datetime(2050,1,1)
+    date2 = datetime.datetime(2050,12,31)    
+    mydates = pd.date_range(date1, date2).tolist()
+    return mydates
+
+
+def get_release_dates(data_set, mature_rating):
+    movies_rday = [];
+    my_dates = get_all_dates_in_year()
+
+    for data in data_set:
+        if data[0] == mature_rating:
+            movies_rday.append(data[7])
+    
+    no_movies_rday = np.full_like(my_dates, 0)
+
+    for ele in movies_rday:
+        i = 0
+        for dato in my_dates:
+            if ele.month == dato.month & ele.day == dato.day:
+                    no_movies_rday[i] += 1
+            i+=1
+    return no_movies_rday;
+    
+    
+

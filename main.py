@@ -10,6 +10,7 @@ import sys
 from lib.converter import convert
 from lib.download import download
 import lib.statistic as stat
+import lib.plotting as plotter
 
 if __name__ == '__main__':
     print("\nPlain Product Movie Analyzer:")
@@ -37,7 +38,13 @@ if __name__ == '__main__':
     print(stat.find_biggest_budget(data_set))
     print(stat.most_popular(data_set,'Denmark'))
     print(stat.find_biggest_revenue(data_set,'United Kingdom'))
-    
+
+
+    #plot 1
+    dates = stat.get_all_dates_in_year()
+    non_adult_rd = stat.get_release_dates(data_set,'False')
+    adult_rd = stat.get_release_dates(data_set,'True')
+    plotter.plot(dates, non_adult_rd, adult_rd)
     # print(stat.most_popular(data_set,'Greenland'))
     # print(stat.find_biggest_revenue(data_set,'Burundi'))
     
