@@ -8,6 +8,7 @@ import lib.plotting as plotting
 import datetime
 import pandas as pd
 import numpy as np
+from pandas import DataFrame
 
 
 def count_adult_movies(data_set):
@@ -86,7 +87,30 @@ def get_release_dates(data_set, mature_rating):
             if ele.month == dato.month & ele.day == dato.day:
                     no_movies_rday[i] += 1
             i+=1
-    return no_movies_rday;
+
+    min_serie = pd.Series(no_movies_rday, index = my_dates)
+    min_serie = pd.to_numeric(min_serie)
+    min_serie.plot()
+    return min_serie;
+
+
+def get_runtime(data_set):
+    runtime_list = []
+
+    for data in data_set:
+        runtime_list.append(data[9])
+    
+    serie = pd.Series(runtime_list)
+    #print(serie)
+
+    my_dates = get_all_dates_in_year()
+
+    serie_date = pd.Series(my_dates)
+    print(serie_date)
+    #df = pd.DataFrame(runtime_list)
+    #df.show()
+
+
     
     
 

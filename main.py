@@ -41,10 +41,12 @@ if __name__ == '__main__':
 
 
     #plot 1
-    dates = stat.get_all_dates_in_year()
+    #dates = stat.get_all_dates_in_year()
     non_adult_rd = stat.get_release_dates(data_set,'False')
-    adult_rd = stat.get_release_dates(data_set,'True')
-    plotter.plot(dates, non_adult_rd, adult_rd)
+    #adult_rd = stat.get_release_dates(data_set,'True')
+    plotter.plot(non_adult_rd)
+    #stat.get_runtime(data_set)
+    #plotter.plot2(non_adult_rd, runtime)
     # print(stat.most_popular(data_set,'Greenland'))
     # print(stat.find_biggest_revenue(data_set,'Burundi'))
     
