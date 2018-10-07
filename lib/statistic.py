@@ -71,7 +71,7 @@ def get_all_dates_in_year():
     return mydates
 
 
-def get_release_dates(data_set, mature_rating):
+def get_release_dates_plot(data_set, mature_rating):
     movies_rday = [];
     my_dates = get_all_dates_in_year()
 
@@ -90,25 +90,29 @@ def get_release_dates(data_set, mature_rating):
 
     min_serie = pd.Series(no_movies_rday, index = my_dates)
     min_serie = pd.to_numeric(min_serie)
-    min_serie.plot()
     return min_serie;
 
 
-def get_runtime(data_set):
+def get_runtime_plot(data_set):
     runtime_list = []
+    realease_date_list = []
+
+    for d in data_set:
+        realease_date_list.append(d[7])
 
     for data in data_set:
         runtime_list.append(data[9])
+
+    df = pd.DataFrame(
+        {'release_date': realease_date_list,
+         'runtime': runtime_list
+         }
+    )
+    df['Month'] = df['release_date'].dt.month
     
-    serie = pd.Series(runtime_list)
-    #print(serie)
-
-    my_dates = get_all_dates_in_year()
-
-    serie_date = pd.Series(my_dates)
-    print(serie_date)
-    #df = pd.DataFrame(runtime_list)
-    #df.show()
+    ax1 = df.plot.scatter(x='Month', y='runtime')
+    #ax1.plot()
+    return ax1
 
 
     

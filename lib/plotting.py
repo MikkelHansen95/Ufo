@@ -27,9 +27,11 @@ def plot(serie):
 
     print("\nPlot saved in plots folder as '"  "'.")
 
-def plot2(x,y):
+def plot2(df):
     plot_file = f''
     plot_dir = 'plots'
     # If the plot directory is not already present it will be created.
     if not os.path.isdir(plot_dir):
         os.makedirs(plot_dir)
+    df.plot(x='release_date', y='runtime', marker='.', linewidth=0)
+    plt.show()
