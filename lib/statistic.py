@@ -10,7 +10,6 @@ import pandas as pd
 import numpy as np
 from pandas import DataFrame
 
-
 def count_adult_movies(data_set):
     count = 0
     for data in data_set:
@@ -61,18 +60,14 @@ def most_popular(data_set, language):
     else:  
         return f'\n"{title}" is the most popular movie from {language}.\nThe movie is rated {max} in popularity.'
 
-#   1995-12-22
-
 def get_all_dates_in_year():
-
-    date1 = datetime.datetime(2050,1,1)
-    date2 = datetime.datetime(2050,12,31)    
+    date1 = datetime.datetime(2050, 1, 1)
+    date2 = datetime.datetime(2050, 12, 31)    
     mydates = pd.date_range(date1, date2).tolist()
     return mydates
 
-
 def get_release_dates_plot(data_set, mature_rating):
-    movies_rday = [];
+    movies_rday = []
     my_dates = get_all_dates_in_year()
 
     for data in data_set:
@@ -85,13 +80,12 @@ def get_release_dates_plot(data_set, mature_rating):
         i = 0
         for dato in my_dates:
             if ele.month == dato.month & ele.day == dato.day:
-                    no_movies_rday[i] += 1
+                no_movies_rday[i] += 1
             i+=1
 
     min_serie = pd.Series(no_movies_rday, index = my_dates)
     min_serie = pd.to_numeric(min_serie)
-    return min_serie;
-
+    return min_serie
 
 def get_runtime_plot(data_set):
     runtime_list = []
@@ -111,10 +105,4 @@ def get_runtime_plot(data_set):
     df['Month'] = df['release_date'].dt.month
     
     ax1 = df.plot.scatter(x='Month', y='runtime')
-    #ax1.plot()
     return ax1
-
-
-    
-    
-

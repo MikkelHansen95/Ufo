@@ -14,8 +14,9 @@ import lib.plotting as plotter
 
 if __name__ == '__main__':
     print("\nPlain Product Movie Analyzer:")
+
     file_dir = 'csv'
-    # If the csv directory already exits it will be created
+    # If the csv directory doesn't already exits it will be created.
     if not os.path.isdir(file_dir):
         os.makedirs(file_dir)
     try:
@@ -32,22 +33,19 @@ if __name__ == '__main__':
     # We filter some data away in order to represent our data in away we find more easy to work with
     data_set = convert(file_name)
 
-    # print(data_set[0][2][0])
     print(stat.count_adult_movies(data_set))
     print(stat.count_animation_movies(data_set))
     print(stat.find_biggest_budget(data_set))
-    print(stat.most_popular(data_set,'Denmark'))
-    print(stat.find_biggest_revenue(data_set,'United Kingdom'))
+    print(stat.most_popular(data_set, 'Denmark'))
+    print(stat.find_biggest_revenue(data_set, 'United Kingdom'))
 
-
-    #plot 1
+    # Plot 1.
     dates = stat.get_all_dates_in_year()
-    non_adult_rd = stat.get_release_dates_plot(data_set,'False')
-    #adult_rd = stat.get_release_dates_plot(data_set,'True')
+    non_adult_rd = stat.get_release_dates_plot(data_set, 'False')
+    # adult_rd = stat.get_release_dates_plot(data_set,'True')
     plotter.plot(non_adult_rd)
-    #plot2
+
+    # Plot 2.
     plot2 = stat.get_runtime_plot(data_set)
     plotter.plot2(plot2)
-    # print(stat.most_popular(data_set,'Greenland'))
-    # print(stat.find_biggest_revenue(data_set,'Burundi'))
     

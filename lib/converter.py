@@ -7,7 +7,7 @@ import ast
 
 def convert(file_name):
     '''
-        This function cleans the data in the given CSV file
+        This function cleans the data in the given CSV file.
     '''
     print('\nReading data from file to memory ...')
     with open(file_name, encoding='utf-8') as fp:

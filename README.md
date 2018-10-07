@@ -35,7 +35,8 @@ It is listed in the set with a 2787965087$ revenue.
 
 * **Plotting images should be created in .png format and found in the 'plots' folder as:** 
 
-  *
+  * plot1.png
+  * plot2.png
 
 * **OBS:** *When creating the plot it should be displayed in a new window and the program execution will halt until this window is closed.*
 
