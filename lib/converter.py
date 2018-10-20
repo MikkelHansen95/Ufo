@@ -4,6 +4,7 @@
 import csv
 import dateutil.parser
 import ast
+import datetime
 
 def convert(file_name):
     '''
@@ -18,12 +19,11 @@ def convert(file_name):
         print('Cleaning up data ...')
         for line in reader:
             try:
-                adult,_,budget,genres,_,_,_,original_language,_,overview,popularity,_,_,production_countries,release_date,revenue,runtime,_,_,_,title,_,_,_ = line
+                datetime,city,state,country,shape,duration,comments,date_posted,latitude,longitude = line
                 # Converting strings to int, float or date:
-                genres,production_countries = ast.literal_eval(genres),ast.literal_eval(production_countries)
-                budget,popularity,release_date,revenue,runtime = int(budget), float(popularity), dateutil.parser.parse(release_date), int(revenue), float(runtime)                
+                datetime,duration= dateutil.parser.parse(datetime), int(duration)   
                 # Appending cleaned data to array:
-                data_set.append([adult,budget,genres,original_language,overview,popularity,production_countries,release_date,revenue,runtime,title])
+                data_set.append([datetime,city,state,country,shape,duration,comments,date_posted,latitude,longitude])
             except:
                 # Some data in the data set is not in standard format..!
                 pass

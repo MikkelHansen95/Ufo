@@ -2,18 +2,19 @@
 Usage: 
     python main.py [<url>]
 Example:
-   python main.py https://raw.githubusercontent.com/MikkelHansen95/dataset/master/movies_metadata.csv
+   python main.py https://raw.githubusercontent.com/planetsig/ufo-reports/master/csv-data/ufo-scrubbed-geocoded-time-standardized.csv
 '''
 
 import os
 import sys
+import csv
 from lib.converter import convert
 from lib.download import download
 import lib.statistic as stat
 import lib.plotting as plotter
 
 if __name__ == '__main__':
-    print("\nPlain Product Movie Analyzer:")
+    print("\nPlain Product Ufo Analyzer:")
 
     file_dir = 'csv'
     # If the csv directory doesn't already exits it will be created.
@@ -31,21 +32,30 @@ if __name__ == '__main__':
 
     # After downloading the csv file we use our own converter to read the file and clean it up. 
     # We filter some data away in order to represent our data in away we find more easy to work with
-    data_set = convert(file_name)
+    data_set = []
 
-    print(stat.count_adult_movies(data_set))
-    print(stat.count_animation_movies(data_set))
-    print(stat.find_biggest_budget(data_set))
-    print(stat.most_popular(data_set, 'Denmark'))
-    print(stat.find_biggest_revenue(data_set, 'United Kingdom'))
+    with open('csv/ufo-scrubbed-geocoded-time-standardized.csv', 'r') as csvfile:
+        csv_reader = csv.reader(csvfile)
+        csv_array = []
+        list_with_dates = []
+        for line in csv_reader:
+          csv_array.append(line)
 
-    # Plot 1.
-    dates = stat.get_all_dates_in_year()
-    non_adult_rd = stat.get_release_dates_plot(data_set, 'False')
-    # adult_rd = stat.get_release_dates_plot(data_set,'True')
-    plotter.plot(non_adult_rd)
+        for i in csv_array:
+            if '24:00' in i[0]:
+                replaced = i[0].replace('24:00','00:00')
+                temp = i
+                temp[0] = replaced
+                data_set.append(temp)
+            else:
+                data_set.append(i)
 
-    # Plot 2.
-    plot2 = stat.get_runtime_plot(data_set)
-    plotter.plot2(plot2)
-    
+    print(stat.count_ufo_spotted(data_set))
+    ufo_spots_evolution = stat.ufo_spotted_over_time(data_set)
+    #plotter.plot_evolution_of_spotters(ufo_spots_evolution)
+    seasons = stat.which_season_is_most_common(data_set)
+    #plotter.plot_season_most_common(seasons)
+    print(stat.how_does_an_ufo_look(data_set))
+    #print(stat.how_long_was_ufo_spotted(data_set))
+    df = stat.which_weekday_ufo_spotted(data_set)
+    plotter.plot_weekday_spots(df)
