@@ -74,4 +74,28 @@ def plot_weekday_spots(df):
     plt.show()
     plt.close()
  
+
+def plot_sentiment(list_of_sentiment):
+    plot_file = f'plot3.png'
+    plot_dir = 'plots'
+    # If the plot directory is not already present it will be created.
+    if not os.path.isdir(plot_dir):
+        os.makedirs(plot_dir)
+
+    list_of_polarity = []
+    list_of_subjectivity = []
+    
+
+    for i in list_of_sentiment[:50]:
+        list_of_polarity.append(i[0])
+        list_of_subjectivity.append(i[1])
+
+    x = list(range(0,len(list_of_polarity)))
+    x1 = list(range(0,len(list_of_subjectivity)))
+    plt.plot(x,list_of_polarity,'-ok',color='black')
+    plt.plot(x1,list_of_subjectivity,'-ok',color='red')
+
+    
+    plt.savefig(os.path.join(plot_dir, plot_file))
     plt.show()
+    plt.close()

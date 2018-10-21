@@ -13,6 +13,7 @@ import csv
 from datetime import datetime
 import dateutil
 import pandas as pd
+from textblob import TextBlob
 
 def count_ufo_spotted(data_set):
     place_ufo_spotted = []
@@ -67,15 +68,14 @@ def how_does_an_ufo_look(data_set):
     return f'\nTop 5 shapes of ufo {count_shapes}'
 
 def how_long_was_ufo_spotted(data_set):
-    ufo_spot_duration = []
     my_count = 0
+    duration = 0
     for i in data_set:
-        ufo_spot_duration.append(i[6])
+        duration += i[6]
         my_count += 1
-    
-    duration_spotted = Counter(ufo_spot_duration)
 
-    return duration_spotted
+    average = duration/my_count
+    return average
 
 def which_weekday_ufo_spotted(data_set):
     weekdays = []
@@ -98,3 +98,15 @@ def which_weekday_ufo_spotted(data_set):
          })
 
     return df
+
+def sentiment(data_set):
+    list_of_sentiment = []
+    for i in data_set[:1000]:
+        blob = TextBlob(i[7])
+        if blob.sentiment[0] < 0 or blob.sentiment[1] < 0:
+            continue
+        else:
+            list_of_sentiment.append(blob.sentiment)
+        blob = ''
+
+    return list_of_sentiment

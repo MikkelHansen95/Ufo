@@ -17,7 +17,20 @@
 ### Using the program should result in the following output:
 
 * **Console output:**
+Hvilket sted er der flest UFO observationer?
 
+    Most spotted place is seattle and was spotted 525
+
+Hvordan har antallet af observationer udviklet sig over tid?
+
+    Se plot0
+
+Hvordan ser en ufo ud?
+    Top 5 shapes of ufo [('light', 16565), ('triangle', 7865), ('circle', 7608), ('fireball', 6208),      ('other', 5649)]
+
+Hvor lang tid kunne de se ufoen(gennemsnit)?
+
+Se sidste plot for sidste del af besvarelse.
 
 
 * **The CSV file should be downloaded to the 'csv' folder.**
