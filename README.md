@@ -17,6 +17,7 @@
 ### Using the program should result in the following output:
 
 * **Console output:**
+
 Most spotted place is seattle and was spotted 525
 
 Number of observation over time look at plot 0
